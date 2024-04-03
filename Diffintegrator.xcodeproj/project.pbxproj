@@ -7,11 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C210F672BA4E8DA000012BE /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855A22B96CC530082FC03 /* Expression.cpp */; };
 		2C5855912B96BB200082FC03 /* DiffintegratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855902B96BB200082FC03 /* DiffintegratorApp.swift */; };
 		2C5855932B96BB200082FC03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855922B96BB200082FC03 /* ContentView.swift */; };
 		2C5855952B96BB210082FC03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5855942B96BB210082FC03 /* Assets.xcassets */; };
 		2C5855982B96BB210082FC03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5855972B96BB210082FC03 /* Preview Assets.xcassets */; };
+		2C5855A42B96CC530082FC03 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855A22B96CC530082FC03 /* Expression.cpp */; };
+		2C60335B2B9E2FF1006B72FC /* DiffintegratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60335A2B9E2FF1006B72FC /* DiffintegratorTests.swift */; };
+		2C6033682B9E30BE006B72FC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C6033672B9E30BE006B72FC /* main.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C60335C2B9E2FF1006B72FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C5855852B96BB200082FC03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C58558C2B96BB200082FC03;
+			remoteInfo = Diffintegrator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C6033632B9E30BE006B72FC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2C58558D2B96BB200082FC03 /* Diffintegrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diffintegrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,10 +46,30 @@
 		2C5855942B96BB210082FC03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C5855972B96BB210082FC03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C5855992B96BB210082FC03 /* Diffintegrator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diffintegrator.entitlements; sourceTree = "<group>"; };
+		2C5855A22B96CC530082FC03 /* Expression.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Expression.cpp; sourceTree = "<group>"; };
+		2C5855A32B96CC530082FC03 /* Expression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Expression.hpp; sourceTree = "<group>"; };
+		2C6033582B9E2FF1006B72FC /* DiffintegratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiffintegratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C60335A2B9E2FF1006B72FC /* DiffintegratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffintegratorTests.swift; sourceTree = "<group>"; };
+		2C6033652B9E30BE006B72FC /* DiffintegratorBackendTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DiffintegratorBackendTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6033672B9E30BE006B72FC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2C58558A2B96BB200082FC03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C6033552B9E2FF1006B72FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C6033622B9E30BE006B72FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				2C58558F2B96BB200082FC03 /* Diffintegrator */,
+				2C6033592B9E2FF1006B72FC /* DiffintegratorTests */,
+				2C6033662B9E30BE006B72FC /* DiffintegratorBackendTests */,
 				2C58558E2B96BB200082FC03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				2C58558D2B96BB200082FC03 /* Diffintegrator.app */,
+				2C6033582B9E2FF1006B72FC /* DiffintegratorTests.xctest */,
+				2C6033652B9E30BE006B72FC /* DiffintegratorBackendTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,6 +102,7 @@
 		2C58558F2B96BB200082FC03 /* Diffintegrator */ = {
 			isa = PBXGroup;
 			children = (
+				2C58559F2B96CA550082FC03 /* Backend */,
 				2C5855902B96BB200082FC03 /* DiffintegratorApp.swift */,
 				2C5855922B96BB200082FC03 /* ContentView.swift */,
 				2C5855942B96BB210082FC03 /* Assets.xcassets */,
@@ -67,6 +118,39 @@
 				2C5855972B96BB210082FC03 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2C58559F2B96CA550082FC03 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				2C5855A02B96CBDE0082FC03 /* MathematicalExpressions */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		2C5855A02B96CBDE0082FC03 /* MathematicalExpressions */ = {
+			isa = PBXGroup;
+			children = (
+				2C5855A22B96CC530082FC03 /* Expression.cpp */,
+				2C5855A32B96CC530082FC03 /* Expression.hpp */,
+			);
+			path = MathematicalExpressions;
+			sourceTree = "<group>";
+		};
+		2C6033592B9E2FF1006B72FC /* DiffintegratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C60335A2B9E2FF1006B72FC /* DiffintegratorTests.swift */,
+			);
+			path = DiffintegratorTests;
+			sourceTree = "<group>";
+		};
+		2C6033662B9E30BE006B72FC /* DiffintegratorBackendTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C6033672B9E30BE006B72FC /* main.cpp */,
+			);
+			path = DiffintegratorBackendTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +173,41 @@
 			productReference = 2C58558D2B96BB200082FC03 /* Diffintegrator.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2C6033572B9E2FF1006B72FC /* DiffintegratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C6033602B9E2FF1006B72FC /* Build configuration list for PBXNativeTarget "DiffintegratorTests" */;
+			buildPhases = (
+				2C6033542B9E2FF1006B72FC /* Sources */,
+				2C6033552B9E2FF1006B72FC /* Frameworks */,
+				2C6033562B9E2FF1006B72FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C60335D2B9E2FF1006B72FC /* PBXTargetDependency */,
+			);
+			name = DiffintegratorTests;
+			productName = DiffintegratorTests;
+			productReference = 2C6033582B9E2FF1006B72FC /* DiffintegratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2C6033642B9E30BE006B72FC /* DiffintegratorBackendTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C6033692B9E30BE006B72FC /* Build configuration list for PBXNativeTarget "DiffintegratorBackendTests" */;
+			buildPhases = (
+				2C6033612B9E30BE006B72FC /* Sources */,
+				2C6033622B9E30BE006B72FC /* Frameworks */,
+				2C6033632B9E30BE006B72FC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DiffintegratorBackendTests;
+			productName = DiffintegratorBackendTests;
+			productReference = 2C6033652B9E30BE006B72FC /* DiffintegratorBackendTests */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,11 +215,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					2C58558C2B96BB200082FC03 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
+					};
+					2C6033572B9E2FF1006B72FC = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 2C58558C2B96BB200082FC03;
+					};
+					2C6033642B9E30BE006B72FC = {
+						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
@@ -118,6 +245,8 @@
 			projectRoot = "";
 			targets = (
 				2C58558C2B96BB200082FC03 /* Diffintegrator */,
+				2C6033572B9E2FF1006B72FC /* DiffintegratorTests */,
+				2C6033642B9E30BE006B72FC /* DiffintegratorBackendTests */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +261,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C6033562B9E2FF1006B72FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,11 +276,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5855932B96BB200082FC03 /* ContentView.swift in Sources */,
+				2C5855A42B96CC530082FC03 /* Expression.cpp in Sources */,
 				2C5855912B96BB200082FC03 /* DiffintegratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C6033542B9E2FF1006B72FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C60335B2B9E2FF1006B72FC /* DiffintegratorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C6033612B9E30BE006B72FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C210F672BA4E8DA000012BE /* Expression.cpp in Sources */,
+				2C6033682B9E30BE006B72FC /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C60335D2B9E2FF1006B72FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C58558C2B96BB200082FC03 /* Diffintegrator */;
+			targetProxy = 2C60335C2B9E2FF1006B72FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2C58559A2B96BB210082FC03 /* Debug */ = {
@@ -199,6 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -206,6 +369,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -256,12 +420,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
 			};
 			name = Release;
 		};
@@ -270,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Diffintegrator/Diffintegrator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -288,6 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ivanpost.Diffintegrator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -297,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Diffintegrator/Diffintegrator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -316,6 +485,60 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2C60335E2B9E2FF1006B72FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6P78G8KAZY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ivanpost.DiffintegratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diffintegrator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Diffintegrator";
+			};
+			name = Debug;
+		};
+		2C60335F2B9E2FF1006B72FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6P78G8KAZY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ivanpost.DiffintegratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diffintegrator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Diffintegrator";
+			};
+			name = Release;
+		};
+		2C60336A2B9E30BE006B72FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P78G8KAZY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2C60336B2B9E30BE006B72FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P78G8KAZY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -336,6 +559,24 @@
 			buildConfigurations = (
 				2C58559D2B96BB210082FC03 /* Debug */,
 				2C58559E2B96BB210082FC03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C6033602B9E2FF1006B72FC /* Build configuration list for PBXNativeTarget "DiffintegratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C60335E2B9E2FF1006B72FC /* Debug */,
+				2C60335F2B9E2FF1006B72FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C6033692B9E30BE006B72FC /* Build configuration list for PBXNativeTarget "DiffintegratorBackendTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C60336A2B9E30BE006B72FC /* Debug */,
+				2C60336B2B9E30BE006B72FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
