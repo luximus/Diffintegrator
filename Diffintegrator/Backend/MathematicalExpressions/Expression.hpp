@@ -17,6 +17,9 @@
 
 #include <boost/variant.hpp>
 #include <boost/fusion/include/vector.hpp>
+#include <boost/fusion/include/at_c.hpp>
+
+#include "TypeUtil.hpp"
 
 namespace fusion = boost::fusion;
 
@@ -96,156 +99,137 @@ struct CallOperator;
  */
 template <typename... arg_types>
 class FunctionOperator {
+private:
     fusion::vector<arg_types...> m_arguments;
 
 public:
-    FunctionOperator(arg_types... args)
+    FunctionOperator(const arg_types&... args)
     : m_arguments(fusion::vector<arg_types...>(args...)) {}
     
     const fusion::vector<arg_types...>& arguments() const {
         return m_arguments;
+    }
+    
+    template <int arg_index>
+    const NthTypeOf<arg_index, arg_types...>& argument() const {
+        using fusion::at_c;
+        return at_c<arg_index>(m_arguments);
+    }
+};
+
+template <typename arg_type>
+class FunctionOperator<arg_type> {
+private:
+    arg_type m_argument;
+    
+public:
+    FunctionOperator(const arg_type& arg)
+    : m_argument(arg) {}
+    
+    const arg_type& argument() const {
+        return m_argument;
     }
 };
 
 /**
  Square root.
  */
-class SquareRoot : public FunctionOperator<double> {
-    static constexpr std::string_view name = "sqrt";
-};
+class SquareRoot;
 
 /**
  Nth root.
  */
-class NthRoot : public FunctionOperator<double, double> {
-    static constexpr std::string_view name = "nthroot";
-};
+class NthRoot;
 
 /**
  Sine.
  */
-class Sine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "sin";
-};
+class Sine;
 
 /**
  Cosine.
  */
-class Cosine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "cos";
-};
+class Cosine;
 
 /**
  Tangent.
  */
-class Tangent : public FunctionOperator<double> {
-    static constexpr std::string_view name = "tan";
-};
+class Tangent;
 
 /**
  Inverse sine (arcsine).
  */
-class InverseSine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "asin";
-};
+class InverseSine;
 
 /**
  Inverse cosine (arccosine).
  */
-class InverseCosine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "acos";
-};
+class InverseCosine;
 
 /**
  Inverse tangent (arctangent).
  */
-class InverseTangent : public FunctionOperator<double> {
-    static constexpr std::string_view name = "atan";
-};
+class InverseTangent;
 
 /**
  Two parameter inverse tangent.
  */
-class InverseTangent2 : public FunctionOperator<double, double> {
-    static constexpr std::string_view name = "atan2";
-};
+class InverseTangent2;
 
 /**
  Hyperbolic sine.
  */
-class HyperbolicSine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "sinh";
-};
+class HyperbolicSine;
 
 /**
  Hyperbolic cosine.
  */
-class HyperbolicCosine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "cosh";
-};
+class HyperbolicCosine;
 
 /**
  Hyperbolic tangent.
  */
-class HyperbolicTangent : public FunctionOperator<double> {
-    static constexpr std::string_view name = "tanh";
-};
+class HyperbolicTangent;
 
 /**
  Inverse hyperbolic sine.
  */
-class InverseHyperbolicSine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "asinh";
-};
+class InverseHyperbolicSine;
 
 /**
  Inverse hyperbolic cosine.
  */
-class InverseHyperbolicCosine : public FunctionOperator<double> {
-    static constexpr std::string_view name = "acosh";
-};
+class InverseHyperbolicCosine;
 
 /**
  Inverse hyperbolic tangent.
  */
-class InverseHyperbolicTangent : public FunctionOperator<double> {
-    static constexpr std::string_view name = "atanh";
-};
+class InverseHyperbolicTangent;
 
 /**
  Base 10 logarithm.
  */
-class Log10 : public FunctionOperator<double> {
-    static constexpr std::string_view name = "log10";
-};
+class Log10;
 
 /**
  Base 2 logarithm.
  */
-class Log2 : public FunctionOperator<double> {
-    static constexpr std::string_view name = "log2";
-};
+class Log2;
 
 /**
  Natural logarithm (base *e*).
  */
-class NaturalLog : public FunctionOperator<double> {
-    static constexpr std::string_view name = "ln";
-};
+class NaturalLog;
 
 /**
  Arbitrary-base logarithm.
  */
-class Logarithm : public FunctionOperator<double, double> {
-    static constexpr std::string_view name = "log";
-};
+class Logarithm;
 
 /**
  Natural exponent (*e*^x).
  */
-class Exp : public FunctionOperator<double> {
-    static constexpr std::string_view name = "exp";
-};
+class Exp;
 
 typedef boost::variant<
     double,
@@ -277,6 +261,7 @@ typedef boost::variant<
     boost::recursive_wrapper<Log10>,
     boost::recursive_wrapper<Log2>,
     boost::recursive_wrapper<NaturalLog>,
+    boost::recursive_wrapper<Logarithm>,
     boost::recursive_wrapper<Exp>
 > Expression;
 
@@ -307,6 +292,183 @@ struct CallOperator {
             throw "";  // TODO: Add exception here
         };
     }
+};
+
+class SquareRoot : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "sqrt";
+};
+
+/**
+ Nth root.
+ */
+class NthRoot : public FunctionOperator<Expression, Expression> {
+public:
+    using FunctionOperator<Expression, Expression>::FunctionOperator;
+    static constexpr std::string_view name = "nthroot";
+};
+
+/**
+ Sine.
+ */
+class Sine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "sin";
+};
+
+/**
+ Cosine.
+ */
+class Cosine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "cos";
+};
+
+/**
+ Tangent.
+ */
+class Tangent : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "tan";
+};
+
+/**
+ Inverse sine (arcsine).
+ */
+class InverseSine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "asin";
+};
+
+/**
+ Inverse cosine (arccosine).
+ */
+class InverseCosine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "acos";
+};
+
+/**
+ Inverse tangent (arctangent).
+ */
+class InverseTangent : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "atan";
+};
+
+/**
+ Two parameter inverse tangent.
+ */
+class InverseTangent2 : public FunctionOperator<Expression, Expression> {
+public:
+    using FunctionOperator<Expression, Expression>::FunctionOperator;
+    static constexpr std::string_view name = "atan2";
+};
+
+/**
+ Hyperbolic sine.
+ */
+class HyperbolicSine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "sinh";
+};
+
+/**
+ Hyperbolic cosine.
+ */
+class HyperbolicCosine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "cosh";
+};
+
+/**
+ Hyperbolic tangent.
+ */
+class HyperbolicTangent : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "tanh";
+};
+
+/**
+ Inverse hyperbolic sine.
+ */
+class InverseHyperbolicSine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "asinh";
+};
+
+/**
+ Inverse hyperbolic cosine.
+ */
+class InverseHyperbolicCosine : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "acosh";
+};
+
+/**
+ Inverse hyperbolic tangent.
+ */
+class InverseHyperbolicTangent : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "atanh";
+};
+
+/**
+ Base 10 logarithm.
+ */
+class Log10 : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "log10";
+};
+
+/**
+ Base 2 logarithm.
+ */
+class Log2 : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "log2";
+};
+
+/**
+ Natural logarithm (base *e*).
+ */
+class NaturalLog : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "ln";
+};
+
+/**
+ Arbitrary-base logarithm.
+ */
+class Logarithm : public FunctionOperator<Expression, Expression> {
+public:
+    using FunctionOperator<Expression, Expression>::FunctionOperator;
+    static constexpr std::string_view name = "log";
+};
+
+/**
+ Natural exponent (*e*^x).
+ */
+class Exp : public FunctionOperator<Expression> {
+public:
+    using FunctionOperator<Expression>::FunctionOperator;
+    static constexpr std::string_view name = "exp";
 };
 
 } /* namespace Expr */

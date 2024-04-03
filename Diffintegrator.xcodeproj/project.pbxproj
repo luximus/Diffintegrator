@@ -14,7 +14,18 @@
 		2C5855A42B96CC530082FC03 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855A22B96CC530082FC03 /* Expression.cpp */; };
 		2C60335B2B9E2FF1006B72FC /* DiffintegratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60335A2B9E2FF1006B72FC /* DiffintegratorTests.swift */; };
 		2C674D0A2BBD9F360068E5A9 /* Exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D082BBD9F360068E5A9 /* Exceptions.cpp */; };
-		2C674D132BBDA5600068E5A9 /* DiffintegratorBackendTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D122BBDA5600068E5A9 /* DiffintegratorBackendTests.mm */; };
+		2C674D132BBDA5600068E5A9 /* ExpressionTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D122BBDA5600068E5A9 /* ExpressionTests.mm */; };
+		2C674D202BBDA8E50068E5A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D1F2BBDA8E50068E5A9 /* main.cpp */; };
+		2C674D252BBDA9970068E5A9 /* Exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D082BBD9F360068E5A9 /* Exceptions.cpp */; };
+		2C674D262BBDA9970068E5A9 /* Exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D082BBD9F360068E5A9 /* Exceptions.cpp */; };
+		2C674D272BBDA99C0068E5A9 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855A22B96CC530082FC03 /* Expression.cpp */; };
+		2C674D282BBDA99C0068E5A9 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855A22B96CC530082FC03 /* Expression.cpp */; };
+		2C674D2B2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */; };
+		2C674D2C2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */; };
+		2C674D2D2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */; };
+		2C674D312BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */; };
+		2C674D322BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */; };
+		2C674D332BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2C674D1B2BBDA8E50068E5A9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2C58558D2B96BB200082FC03 /* Diffintegrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diffintegrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5855902B96BB200082FC03 /* DiffintegratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffintegratorApp.swift; sourceTree = "<group>"; };
@@ -48,7 +71,13 @@
 		2C674D082BBD9F360068E5A9 /* Exceptions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Exceptions.cpp; sourceTree = "<group>"; };
 		2C674D092BBD9F360068E5A9 /* Exceptions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Exceptions.hpp; sourceTree = "<group>"; };
 		2C674D102BBDA5600068E5A9 /* DiffintegratorBackendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiffintegratorBackendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C674D122BBDA5600068E5A9 /* DiffintegratorBackendTests.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = DiffintegratorBackendTests.mm; sourceTree = "<group>"; };
+		2C674D122BBDA5600068E5A9 /* ExpressionTests.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = ExpressionTests.mm; sourceTree = "<group>"; };
+		2C674D1D2BBDA8E50068E5A9 /* DiffintegratorBackendPlayground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DiffintegratorBackendPlayground; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C674D1F2BBDA8E50068E5A9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Calculator.cpp; sourceTree = "<group>"; };
+		2C674D2A2BBDAB6F0068E5A9 /* Calculator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Calculator.hpp; sourceTree = "<group>"; };
+		2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TypeUtil.cpp; sourceTree = "<group>"; };
+		2C674D302BBDCEB40068E5A9 /* TypeUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TypeUtil.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +102,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C674D1A2BBDA8E50068E5A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +118,7 @@
 				2C58558F2B96BB200082FC03 /* Diffintegrator */,
 				2C6033592B9E2FF1006B72FC /* DiffintegratorTests */,
 				2C674D112BBDA5600068E5A9 /* DiffintegratorBackendTests */,
+				2C674D1E2BBDA8E50068E5A9 /* DiffintegratorBackendPlayground */,
 				2C58558E2B96BB200082FC03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +129,7 @@
 				2C58558D2B96BB200082FC03 /* Diffintegrator.app */,
 				2C6033582B9E2FF1006B72FC /* DiffintegratorTests.xctest */,
 				2C674D102BBDA5600068E5A9 /* DiffintegratorBackendTests.xctest */,
+				2C674D1D2BBDA8E50068E5A9 /* DiffintegratorBackendPlayground */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +158,7 @@
 		2C58559F2B96CA550082FC03 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				2C674D2E2BBDCE860068E5A9 /* Util */,
 				2C5855A02B96CBDE0082FC03 /* MathematicalExpressions */,
 			);
 			path = Backend;
@@ -132,6 +171,8 @@
 				2C5855A32B96CC530082FC03 /* Expression.hpp */,
 				2C674D082BBD9F360068E5A9 /* Exceptions.cpp */,
 				2C674D092BBD9F360068E5A9 /* Exceptions.hpp */,
+				2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */,
+				2C674D2A2BBDAB6F0068E5A9 /* Calculator.hpp */,
 			);
 			path = MathematicalExpressions;
 			sourceTree = "<group>";
@@ -147,9 +188,26 @@
 		2C674D112BBDA5600068E5A9 /* DiffintegratorBackendTests */ = {
 			isa = PBXGroup;
 			children = (
-				2C674D122BBDA5600068E5A9 /* DiffintegratorBackendTests.mm */,
+				2C674D122BBDA5600068E5A9 /* ExpressionTests.mm */,
 			);
 			path = DiffintegratorBackendTests;
+			sourceTree = "<group>";
+		};
+		2C674D1E2BBDA8E50068E5A9 /* DiffintegratorBackendPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				2C674D1F2BBDA8E50068E5A9 /* main.cpp */,
+			);
+			path = DiffintegratorBackendPlayground;
+			sourceTree = "<group>";
+		};
+		2C674D2E2BBDCE860068E5A9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */,
+				2C674D302BBDCEB40068E5A9 /* TypeUtil.hpp */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +266,23 @@
 			productReference = 2C674D102BBDA5600068E5A9 /* DiffintegratorBackendTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2C674D1C2BBDA8E50068E5A9 /* DiffintegratorBackendPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C674D232BBDA8E50068E5A9 /* Build configuration list for PBXNativeTarget "DiffintegratorBackendPlayground" */;
+			buildPhases = (
+				2C674D192BBDA8E50068E5A9 /* Sources */,
+				2C674D1A2BBDA8E50068E5A9 /* Frameworks */,
+				2C674D1B2BBDA8E50068E5A9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DiffintegratorBackendPlayground;
+			productName = DiffintegratorBackendPlayground;
+			productReference = 2C674D1D2BBDA8E50068E5A9 /* DiffintegratorBackendPlayground */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -230,6 +305,9 @@
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 2C58558C2B96BB200082FC03;
 					};
+					2C674D1C2BBDA8E50068E5A9 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 				};
 			};
 			buildConfigurationList = 2C5855882B96BB200082FC03 /* Build configuration list for PBXProject "Diffintegrator" */;
@@ -248,6 +326,7 @@
 				2C58558C2B96BB200082FC03 /* Diffintegrator */,
 				2C6033572B9E2FF1006B72FC /* DiffintegratorTests */,
 				2C674D0F2BBDA5600068E5A9 /* DiffintegratorBackendTests */,
+				2C674D1C2BBDA8E50068E5A9 /* DiffintegratorBackendPlayground */,
 			);
 		};
 /* End PBXProject section */
@@ -286,7 +365,9 @@
 				2C5855932B96BB200082FC03 /* ContentView.swift in Sources */,
 				2C674D0A2BBD9F360068E5A9 /* Exceptions.cpp in Sources */,
 				2C5855A42B96CC530082FC03 /* Expression.cpp in Sources */,
+				2C674D2B2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */,
 				2C5855912B96BB200082FC03 /* DiffintegratorApp.swift in Sources */,
+				2C674D312BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +383,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C674D132BBDA5600068E5A9 /* DiffintegratorBackendTests.mm in Sources */,
+				2C674D132BBDA5600068E5A9 /* ExpressionTests.mm in Sources */,
+				2C674D2C2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */,
+				2C674D272BBDA99C0068E5A9 /* Expression.cpp in Sources */,
+				2C674D252BBDA9970068E5A9 /* Exceptions.cpp in Sources */,
+				2C674D322BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C674D192BBDA8E50068E5A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C674D202BBDA8E50068E5A9 /* main.cpp in Sources */,
+				2C674D2D2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */,
+				2C674D282BBDA99C0068E5A9 /* Expression.cpp in Sources */,
+				2C674D262BBDA9970068E5A9 /* Exceptions.cpp in Sources */,
+				2C674D332BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +666,26 @@
 			};
 			name = Release;
 		};
+		2C674D212BBDA8E50068E5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P78G8KAZY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2C674D222BBDA8E50068E5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6P78G8KAZY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -604,6 +721,15 @@
 			buildConfigurations = (
 				2C674D172BBDA5600068E5A9 /* Debug */,
 				2C674D182BBDA5600068E5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C674D232BBDA8E50068E5A9 /* Build configuration list for PBXNativeTarget "DiffintegratorBackendPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C674D212BBDA8E50068E5A9 /* Debug */,
+				2C674D222BBDA8E50068E5A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
