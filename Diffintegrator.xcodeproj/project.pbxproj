@@ -112,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C12F1ED2BBE4B4F005A6511 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */,
+				2C674D2A2BBDAB6F0068E5A9 /* Calculator.hpp */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
 		2C5855842B96BB200082FC03 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +167,7 @@
 		2C58559F2B96CA550082FC03 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				2C12F1ED2BBE4B4F005A6511 /* Calculators */,
 				2C674D2E2BBDCE860068E5A9 /* Util */,
 				2C5855A02B96CBDE0082FC03 /* MathematicalExpressions */,
 			);
@@ -171,8 +181,6 @@
 				2C5855A32B96CC530082FC03 /* Expression.hpp */,
 				2C674D082BBD9F360068E5A9 /* Exceptions.cpp */,
 				2C674D092BBD9F360068E5A9 /* Exceptions.hpp */,
-				2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */,
-				2C674D2A2BBDAB6F0068E5A9 /* Calculator.hpp */,
 			);
 			path = MathematicalExpressions;
 			sourceTree = "<group>";
