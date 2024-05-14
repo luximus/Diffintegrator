@@ -14,127 +14,127 @@
 
 #include "Expression.hpp"
 
-double Calc::Calculator::operator()(const Expr::NumberReference& expr) noexcept(false) {
+double Math::Calculator::operator()(const Math::NumberReference& expr) noexcept(false) {
     throw std::runtime_error("NumberReference not supported");
 }
 
-double Calc::Calculator::operator()(const Expr::FunctionReference& expr) noexcept(false) {
+double Math::Calculator::operator()(const Math::FunctionReference& expr) noexcept(false) {
     throw std::runtime_error("FunctionReference not supported");
 }
 
-double Calc::Calculator::operator()(const Expr::Variable& expr) noexcept(false) {
+double Math::Calculator::operator()(const Math::Variable& expr) noexcept(false) {
     throw std::runtime_error("Variable not supported");
 }
 
-double Calc::Calculator::operator()(const Expr::PrefixOperator<Expr::negate>& expr) {
+double Math::Calculator::operator()(const Math::PrefixOperator<Math::negate>& expr) {
     return -boost::apply_visitor(*this, expr.argument);
 }
 
-double Calc::Calculator::operator()(const Expr::BinaryOperator<Expr::add>& expr) {
+double Math::Calculator::operator()(const Math::BinaryOperator<Math::add>& expr) {
     return boost::apply_visitor(*this, expr.left) + boost::apply_visitor(*this, expr.right);
 }
 
-double Calc::Calculator::operator()(const Expr::BinaryOperator<Expr::subtract>& expr) {
+double Math::Calculator::operator()(const Math::BinaryOperator<Math::subtract>& expr) {
     return boost::apply_visitor(*this, expr.left) - boost::apply_visitor(*this, expr.right);
 }
 
-double Calc::Calculator::operator()(const Expr::BinaryOperator<Expr::multiply>& expr) {
+double Math::Calculator::operator()(const Math::BinaryOperator<Math::multiply>& expr) {
     return boost::apply_visitor(*this, expr.left) * boost::apply_visitor(*this, expr.right);
 }
 
-double Calc::Calculator::operator()(const Expr::BinaryOperator<Expr::divide>& expr) {
+double Math::Calculator::operator()(const Math::BinaryOperator<Math::divide>& expr) {
     return boost::apply_visitor(*this, expr.left) / boost::apply_visitor(*this, expr.right);
 }
 
-double Calc::Calculator::operator()(const Expr::BinaryOperator<Expr::exponentiate>& expr) {
+double Math::Calculator::operator()(const Math::BinaryOperator<Math::exponentiate>& expr) {
     return pow(boost::apply_visitor(*this, expr.left), boost::apply_visitor(*this, expr.right));
 }
 
-double Calc::Calculator::operator()(const Expr::CallOperator& expr) noexcept(false) {
+double Math::Calculator::operator()(const Math::CallOperator& expr) noexcept(false) {
     throw std::runtime_error("Call operator not supported");
 }
 
-double Calc::Calculator::operator()(const Expr::SquareRoot& expr) {
+double Math::Calculator::operator()(const Math::SquareRoot& expr) {
     return sqrt(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::NthRoot& expr) {
+double Math::Calculator::operator()(const Math::NthRoot& expr) {
     using boost::fusion::at_c;
     return pow(boost::apply_visitor(*this, expr.argument<1>()),
                1.0 / boost::apply_visitor(*this, expr.argument<0>()));
 }
 
-double Calc::Calculator::operator()(const Expr::Sine& expr) {
+double Math::Calculator::operator()(const Math::Sine& expr) {
     return sin(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::Cosine& expr) {
+double Math::Calculator::operator()(const Math::Cosine& expr) {
     return cos(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::Tangent& expr) {
+double Math::Calculator::operator()(const Math::Tangent& expr) {
     return tan(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::InverseSine& expr) {
+double Math::Calculator::operator()(const Math::InverseSine& expr) {
     return asin(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::InverseCosine& expr) {
+double Math::Calculator::operator()(const Math::InverseCosine& expr) {
     return acos(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::InverseTangent& expr) {
+double Math::Calculator::operator()(const Math::InverseTangent& expr) {
     return atan(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::InverseTangent2& expr) {
+double Math::Calculator::operator()(const Math::InverseTangent2& expr) {
     return atan2(boost::apply_visitor(*this, expr.argument<0>()),
                  boost::apply_visitor(*this, expr.argument<1>()));
 }
 
-double Calc::Calculator::operator()(const Expr::HyperbolicSine& expr) {
+double Math::Calculator::operator()(const Math::HyperbolicSine& expr) {
     return sinh(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::HyperbolicCosine& expr) {
+double Math::Calculator::operator()(const Math::HyperbolicCosine& expr) {
     return cosh(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::HyperbolicTangent& expr) {
+double Math::Calculator::operator()(const Math::HyperbolicTangent& expr) {
     return tanh(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::InverseHyperbolicSine& expr) {
+double Math::Calculator::operator()(const Math::InverseHyperbolicSine& expr) {
     return asinh(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::InverseHyperbolicCosine& expr) {
+double Math::Calculator::operator()(const Math::InverseHyperbolicCosine& expr) {
     return acosh(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::InverseHyperbolicTangent& expr) {
+double Math::Calculator::operator()(const Math::InverseHyperbolicTangent& expr) {
     return atanh(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::Log10& expr) {
+double Math::Calculator::operator()(const Math::Log10& expr) {
     return log10(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::Log2& expr) {
+double Math::Calculator::operator()(const Math::Log2& expr) {
     return log2(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::NaturalLog& expr) {
+double Math::Calculator::operator()(const Math::NaturalLog& expr) {
     return log(boost::apply_visitor(*this, expr.argument()));
 }
 
-double Calc::Calculator::operator()(const Expr::Logarithm& expr) {
+double Math::Calculator::operator()(const Math::Logarithm& expr) {
     return log(boost::apply_visitor(*this, expr.argument<1>())) 
            / log(boost::apply_visitor(*this, expr.argument<0>()));
 }
 
-double Calc::Calculator::operator()(const Expr::Exp& expr) {
+double Math::Calculator::operator()(const Math::Exp& expr) {
     return exp(boost::apply_visitor(*this, expr.argument()));
 }
 

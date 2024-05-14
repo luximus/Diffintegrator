@@ -9,16 +9,23 @@
 
 #include <stdexcept>
 
-Expr::ArgumentError::ArgumentError(const char *const message)
+Math::ArgumentError::ArgumentError(const char *const message)
 : std::runtime_error(message) {};
 
-char const* Expr::ArgumentError::what() const noexcept(true) {
+char const* Math::ArgumentError::what() const noexcept(true) {
     return exception::what();
 }
 
-Expr::DomainError::DomainError(const char *const message)
+Math::DomainError::DomainError(const char *const message)
 : std::runtime_error(message) {};
 
-char const* Expr::DomainError::what() const noexcept(true) {
+char const* Math::DomainError::what() const noexcept(true) {
+    return exception::what();
+}
+
+Math::ReferenceError::ReferenceError(const char *const message)
+: std::runtime_error(message) {};
+
+char const* Math::ReferenceError::what() const noexcept(true) {
     return exception::what();
 }

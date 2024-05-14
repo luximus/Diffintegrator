@@ -26,6 +26,15 @@
 		2C674D312BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */; };
 		2C674D322BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */; };
 		2C674D332BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */; };
+		2C716EB72BE87C4E004DCD24 /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EB52BE87C4E004DCD24 /* Environment.cpp */; };
+		2C716EB82BE87C4E004DCD24 /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EB52BE87C4E004DCD24 /* Environment.cpp */; };
+		2C716EB92BE87C4E004DCD24 /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EB52BE87C4E004DCD24 /* Environment.cpp */; };
+		2C716EBC2BE88234004DCD24 /* Declaration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EBA2BE88234004DCD24 /* Declaration.cpp */; };
+		2C716EBD2BE88234004DCD24 /* Declaration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EBA2BE88234004DCD24 /* Declaration.cpp */; };
+		2C716EBE2BE88234004DCD24 /* Declaration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EBA2BE88234004DCD24 /* Declaration.cpp */; };
+		2C716EC12BE9CD80004DCD24 /* DependencyExtractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EBF2BE9CD80004DCD24 /* DependencyExtractor.cpp */; };
+		2C716EC22BE9CD80004DCD24 /* DependencyExtractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EBF2BE9CD80004DCD24 /* DependencyExtractor.cpp */; };
+		2C716EC32BE9CD80004DCD24 /* DependencyExtractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C716EBF2BE9CD80004DCD24 /* DependencyExtractor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +87,12 @@
 		2C674D2A2BBDAB6F0068E5A9 /* Calculator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Calculator.hpp; sourceTree = "<group>"; };
 		2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TypeUtil.cpp; sourceTree = "<group>"; };
 		2C674D302BBDCEB40068E5A9 /* TypeUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TypeUtil.hpp; sourceTree = "<group>"; };
+		2C716EB52BE87C4E004DCD24 /* Environment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
+		2C716EB62BE87C4E004DCD24 /* Environment.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Environment.hpp; sourceTree = "<group>"; };
+		2C716EBA2BE88234004DCD24 /* Declaration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Declaration.cpp; sourceTree = "<group>"; };
+		2C716EBB2BE88234004DCD24 /* Declaration.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Declaration.hpp; sourceTree = "<group>"; };
+		2C716EBF2BE9CD80004DCD24 /* DependencyExtractor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DependencyExtractor.cpp; sourceTree = "<group>"; };
+		2C716EC02BE9CD80004DCD24 /* DependencyExtractor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DependencyExtractor.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +132,8 @@
 			children = (
 				2C674D292BBDAB6F0068E5A9 /* Calculator.cpp */,
 				2C674D2A2BBDAB6F0068E5A9 /* Calculator.hpp */,
+				2C716EBF2BE9CD80004DCD24 /* DependencyExtractor.cpp */,
+				2C716EC02BE9CD80004DCD24 /* DependencyExtractor.hpp */,
 			);
 			path = Calculators;
 			sourceTree = "<group>";
@@ -181,6 +198,10 @@
 				2C5855A32B96CC530082FC03 /* Expression.hpp */,
 				2C674D082BBD9F360068E5A9 /* Exceptions.cpp */,
 				2C674D092BBD9F360068E5A9 /* Exceptions.hpp */,
+				2C716EB52BE87C4E004DCD24 /* Environment.cpp */,
+				2C716EB62BE87C4E004DCD24 /* Environment.hpp */,
+				2C716EBA2BE88234004DCD24 /* Declaration.cpp */,
+				2C716EBB2BE88234004DCD24 /* Declaration.hpp */,
 			);
 			path = MathematicalExpressions;
 			sourceTree = "<group>";
@@ -373,9 +394,12 @@
 				2C5855932B96BB200082FC03 /* ContentView.swift in Sources */,
 				2C674D0A2BBD9F360068E5A9 /* Exceptions.cpp in Sources */,
 				2C5855A42B96CC530082FC03 /* Expression.cpp in Sources */,
+				2C716EC12BE9CD80004DCD24 /* DependencyExtractor.cpp in Sources */,
 				2C674D2B2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */,
 				2C5855912B96BB200082FC03 /* DiffintegratorApp.swift in Sources */,
 				2C674D312BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
+				2C716EBC2BE88234004DCD24 /* Declaration.cpp in Sources */,
+				2C716EB72BE87C4E004DCD24 /* Environment.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,9 +415,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C716EC22BE9CD80004DCD24 /* DependencyExtractor.cpp in Sources */,
+				2C716EBD2BE88234004DCD24 /* Declaration.cpp in Sources */,
 				2C674D132BBDA5600068E5A9 /* ExpressionTests.mm in Sources */,
 				2C674D2C2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */,
 				2C674D272BBDA99C0068E5A9 /* Expression.cpp in Sources */,
+				2C716EB82BE87C4E004DCD24 /* Environment.cpp in Sources */,
 				2C674D252BBDA9970068E5A9 /* Exceptions.cpp in Sources */,
 				2C674D322BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
 			);
@@ -403,9 +430,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C716EC32BE9CD80004DCD24 /* DependencyExtractor.cpp in Sources */,
+				2C716EBE2BE88234004DCD24 /* Declaration.cpp in Sources */,
 				2C674D202BBDA8E50068E5A9 /* main.cpp in Sources */,
 				2C674D2D2BBDAB6F0068E5A9 /* Calculator.cpp in Sources */,
 				2C674D282BBDA99C0068E5A9 /* Expression.cpp in Sources */,
+				2C716EB92BE87C4E004DCD24 /* Environment.cpp in Sources */,
 				2C674D262BBDA9970068E5A9 /* Exceptions.cpp in Sources */,
 				2C674D332BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
 			);

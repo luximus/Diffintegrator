@@ -13,6 +13,7 @@
 #define BOOST_MPL_LIMIT_LIST_SIZE 50
 
 #include <vector>
+#include <compare>
 #include <exception>
 
 #include <boost/variant.hpp>
@@ -23,7 +24,7 @@
 
 namespace fusion = boost::fusion;
 
-namespace Expr {
+namespace Math {
 
 /**
  A reference a numerical value.
@@ -33,6 +34,8 @@ struct NumberReference {
     
     NumberReference(std::string name) : name(name) {};
     NumberReference(std::string_view name) : name(name) {};
+    
+    friend auto operator<=>(const NumberReference&, const NumberReference&) = default;
 };
 
 /**
@@ -47,6 +50,8 @@ struct FunctionReference {
     
     FunctionReference(std::string_view name, int number_of_arguments)
     : name(name), number_of_arguments(number_of_arguments) {}
+    
+    friend auto operator<=>(const FunctionReference&, const FunctionReference&) = default;
 };
 
 /**
@@ -57,6 +62,8 @@ struct Variable {
     
     Variable(std::string name) : name(name) {}
     Variable(std::string_view name) : name(name) {}
+    
+    friend auto operator<=>(const Variable&, const Variable& rhs) = default;
 };
 
 /**
@@ -471,6 +478,6 @@ public:
     static constexpr std::string_view name = "exp";
 };
 
-} /* namespace Expr */
+} /* namespace Math */
 
 #endif /* Expression_hpp */

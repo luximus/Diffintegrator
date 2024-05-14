@@ -10,10 +10,12 @@
 
 #include <stdexcept>
 
-namespace Expr {
+// TODO: Allow these errors to accept error location information
+
+namespace Math {
 
 /**
- Exceptions related to the arguments passed into a function.
+ An argument was invalid, there are arguments missing, or there are too many arguments.
  */
 class ArgumentError : public std::runtime_error {
 public:
@@ -22,9 +24,22 @@ public:
     virtual char const* what() const noexcept(true);
 };
 
+/**
+ The argument to a mathematical function is outside its domain.
+ */
 class DomainError : public std::runtime_error {
 public:
     DomainError(char const* const message);
+    
+    virtual char const* what() const noexcept(true);
+};
+
+/**
+ The reference to another number or function could not be resolved.
+ */
+class ReferenceError : public std::runtime_error {
+public:
+    ReferenceError(char const* const message);
     
     virtual char const* what() const noexcept(true);
 };
