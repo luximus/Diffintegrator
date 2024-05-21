@@ -12,11 +12,11 @@
 #define BOOST_MPL_CFG_NO_PREPROCESSED_HEADERS
 #define BOOST_MPL_LIMIT_LIST_SIZE 50
 
-#include <vector>
+//#include <vector>
 #include <compare>
-#include <exception>
 
-#include <boost/variant.hpp>
+#include <boost/variant/variant.hpp>
+#include <boost/variant/recursive_wrapper.hpp>
 #include <boost/fusion/include/vector.hpp>
 #include <boost/fusion/include/at_c.hpp>
 
@@ -32,7 +32,7 @@ namespace Math {
 struct NumberReference {
     std::string_view name;
     
-    NumberReference(std::string name) : name(name) {};
+//    NumberReference(std::string name) : name(name) {};
     NumberReference(std::string_view name) : name(name) {};
     
     friend auto operator<=>(const NumberReference&, const NumberReference&) = default;
@@ -96,10 +96,10 @@ enum BinaryOperatorTags {
 template <BinaryOperatorTags OpTag>
 struct BinaryOperator;
 
-/**
- An operator for calling a function.
- */
-struct CallOperator;
+///**
+// An operator for calling a function.
+// */
+//struct CallOperator;
 
 /**
  Function operators.
@@ -241,7 +241,6 @@ class Exp;
 typedef boost::variant<
     double,
     NumberReference,
-    FunctionReference,
     Variable,
     boost::recursive_wrapper<PrefixOperator<negate>>,
     boost::recursive_wrapper<BinaryOperator<add>>,
@@ -249,7 +248,7 @@ typedef boost::variant<
     boost::recursive_wrapper<BinaryOperator<multiply>>,
     boost::recursive_wrapper<BinaryOperator<divide>>,
     boost::recursive_wrapper<BinaryOperator<exponentiate>>,
-    boost::recursive_wrapper<CallOperator>,
+//    boost::recursive_wrapper<CallOperator>,
     boost::recursive_wrapper<SquareRoot>,
     boost::recursive_wrapper<NthRoot>,
     boost::recursive_wrapper<Sine>,
@@ -289,17 +288,17 @@ struct BinaryOperator {
     : left(lhs), right(rhs) {}
 };
 
-struct CallOperator {
-    FunctionReference func;
-    std::vector<Expression> args;
-    
-    CallOperator(const FunctionReference& func, const std::vector<Expression>& args) noexcept(false)
-    : func(func), args(args) {
-        if (args.size() != func.number_of_arguments) {
-            throw "";  // TODO: Add exception here
-        };
-    }
-};
+//struct CallOperator {
+//    FunctionReference func;
+//    std::vector<Expression> args;
+//    
+//    CallOperator(const FunctionReference& func, const std::vector<Expression>& args) noexcept(false)
+//    : func(func), args(args) {
+//        if (args.size() != func.number_of_arguments) {
+//            throw std::logic_error("Claimed number of arguments does not match actual number");  // TODO: Add exception here
+//        };
+//    }
+//};
 
 class SquareRoot : public FunctionOperator<Expression> {
 public:

@@ -10,11 +10,11 @@
 
 #include <set>
 
+#include <boost/fusion/algorithm/iteration/for_each.hpp>
 #include <boost/variant/static_visitor.hpp>
 #include <boost/variant/apply_visitor.hpp>
 
 #include "Expression.hpp"
-#include "Declaration.hpp"
 
 namespace Math {
 
@@ -23,7 +23,7 @@ public:
     
     struct Result {
         std::set<NumberReference> number_refs;
-        std::set<FunctionReference> function_refs;
+//        std::set<FunctionReference> function_refs;
         std::set<Variable> variables;
     };
     
@@ -37,38 +37,37 @@ public:
         boost::apply_visitor(*this, expr);
     }
     
-    void extract_from(const Declaration& decl) {
-        boost::apply_visitor(*this, decl);
-    }
-    
     void operator()(const double& value) {}
     
-    void operator()(const Math::NumberReference& expr) {};
-    void operator()(const Math::FunctionReference& expr) {};
+    void operator()(const NumberReference& expr);
+//    void operator()(const Math::FunctionReference& expr) {};
     
-    void operator()(const Math::Variable& expr);
+    void operator()(const Variable& expr);
     
     template <PrefixOperatorTags tag>
-    void operator()(const Math::PrefixOperator<tag>& expr);
+    void operator()(const PrefixOperator<tag>& expr) {
+        boost::apply_visitor(*this, expr.argument);
+    }
     
     template <BinaryOperatorTags tag>
-    void operator()(const Math::BinaryOperator<tag>& expr);
+    void operator()(const BinaryOperator<tag>& expr) {
+        boost::apply_visitor(*this, expr.left);
+        boost::apply_visitor(*this, expr.right);
+    }
     
-    void operator()(const Math::CallOperator& expr);
+//    void operator()(const Math::CallOperator& expr);
     
     template <typename... arg_types>
-    void operator()(const Math::FunctionOperator<arg_types...>& expr);
+    void operator()(const FunctionOperator<arg_types...>& expr) {
+        boost::fusion::for_each(expr.arguments(), [&]<typename T>(const T& arg) {
+            boost::apply_visitor(*this, arg);
+        });
+    }
     
     template <typename arg_type>
-    void operator()(const Math::FunctionOperator<arg_type>& expr);
-    
-    void operator()(const Math::ExpressionDeclaration& decl);
-    
-    void operator()(const Math::NumberReferenceAssignmentDeclaration& decl);
-    
-    void operator()(const Math::FunctionReferenceAssignmentDeclaration& decl);
-    
-    void operator()(const Math::ExplicitEquationDeclaration& decl);
+    void operator()(const FunctionOperator<arg_type>& expr) {
+        boost::apply_visitor(*this, expr.argument());
+    }
     
     const Result& result() const { return m_result; }
     

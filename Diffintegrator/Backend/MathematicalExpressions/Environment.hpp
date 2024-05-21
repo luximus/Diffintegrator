@@ -11,77 +11,90 @@
 #include <map>
 #include <memory>
 #include <set>
-#include <string>
-#include <vector>
+#include <utility>
 
-#include <boost/variant/static_visitor.hpp>
-
+#include "EnvironmentNode.hpp"
 #include "Expression.hpp"
-#include "Declaration.hpp"
 
 namespace Math {
 
-class Environment {
-public:
-    
-    class DeclarationNode;
-    
-private:
-    
-    using DeclarationNodeCSharedPtr = const std::shared_ptr<DeclarationNode>;
+/**
+ A mathematical environment for evaluating mathematical expressions.
+ */
+class Environment : public std::enable_shared_from_this<Environment> {
     
 public:
     
-    typedef std::set<DeclarationNodeCSharedPtr> NodeSet;
+    using SharedPtr = std::shared_ptr<Environment>;
+    using WeakPtr = std::weak_ptr<Environment>;
     
-    DeclarationNodeCSharedPtr add_declaration(Declaration decl) noexcept(false);
-    void remove_declaration(std::shared_ptr<DeclarationNode> node);
+    friend Environment::SharedPtr make_environment();
     
-    DeclarationNodeCSharedPtr get_reference_assignment_node(NumberReference ref) {
+    /**
+     Get a shared pointer to this `Environment`.
+     */
+    std::shared_ptr<Environment> getptr() {
+        return shared_from_this();
+    }
+    
+    /**
+     Get a weak pointer to this `Environment`.
+     */
+    Environment::WeakPtr getweakptr() {
+        return weak_from_this();
+    }
+    
+    /**
+     A set of constant shared pointers to `EnvironmentNode`s.
+     */
+    typedef std::set<EnvironmentNodeCSharedPtr> NodeSet;
+    
+    /**
+     Get the nodes currently in this environment.
+     */
+    const NodeSet& nodes() const { return m_nodes; }
+    
+    /**
+     Add a new node to this environment.
+     */
+    void add_node(EnvironmentNodeSharedPtr node) noexcept(false);
+    
+    /**
+     Remove a node from this environment.
+     */
+    void remove_node(EnvironmentNodeSharedPtr node);
+    
+    /**
+     Get a shared pointer to the `EnvironmentNode` that assigns the given number reference.
+     */
+    EnvironmentNodeCSharedPtr get_assigned_node(NumberReference ref) const {
         return m_number_refs.at(ref);
     }
     
-    DeclarationNodeCSharedPtr get_reference_assignment_node(FunctionReference ref) {
-        return m_function_refs.at(ref);
+//    EnvironmentNodeCSharedPtr get_assigned_node(FunctionReference ref) const {
+//        return m_function_refs.at(ref);
+//    }
+    
+    void assign(NumberReference ref, EnvironmentNodeSharedPtr node) {
+        m_number_refs.insert(std::make_pair(ref, node));
     }
     
-    template <typename result_type>
-    std::map<DeclarationNodeCSharedPtr, result_type> eval(boost::static_visitor<result_type>& visitor) const noexcept(false);
+//    void assign(FunctionReference ref, EnvironmentNodeSharedPtr node) {
+//        m_function_refs.insert(std::make_pair(ref, node));
+//    }
     
 private:
     
-    NodeSet m_declarations;
+    NodeSet m_nodes;
     
-    std::map<NumberReference, DeclarationNodeCSharedPtr> m_number_refs;
-    std::map<FunctionReference, DeclarationNodeCSharedPtr> m_function_refs;
+    std::map<NumberReference, EnvironmentNodeCSharedPtr> m_number_refs;
+//    std::map<FunctionReference, EnvironmentNodeCSharedPtr> m_function_refs;
     
 
 };
 
-class Environment::DeclarationNode {
-public:
-    
-    DeclarationNode(Declaration decl) : m_decl(decl) {
-        calc_dependencies();
-    }
-    
-    const Declaration& get() const { return m_decl; }
-    const std::set<NumberReference>& number_ref_dependencies() const { return m_number_ref_dependencies; }
-    const std::set<FunctionReference>& function_ref_dependencies() const { return m_function_ref_dependencies; }
-    const std::set<Variable>& variable_dependencies() const { return m_variable_dependencies; }
-    
-    
-    
-private:
-    
-    Declaration m_decl;
-    std::set<NumberReference> m_number_ref_dependencies;
-    std::set<FunctionReference> m_function_ref_dependencies;
-    std::set<Variable> m_variable_dependencies;
-    
-    void calc_dependencies();
-};
+Environment::SharedPtr make_environment();
 
-}  // namespace Math
+} /* namespace Math */
 
 #endif /* Environment_hpp */
