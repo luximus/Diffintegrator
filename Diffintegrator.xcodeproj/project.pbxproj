@@ -10,6 +10,10 @@
 		2C07E1D92BF943FF00F3FA34 /* Calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C07E1D72BF943FF00F3FA34 /* Calculator.cpp */; };
 		2C07E1DA2BF943FF00F3FA34 /* Calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C07E1D72BF943FF00F3FA34 /* Calculator.cpp */; };
 		2C07E1DB2BF943FF00F3FA34 /* Calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C07E1D72BF943FF00F3FA34 /* Calculator.cpp */; };
+		2C4DD5182C18E42F00B48191 /* Dual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DD5162C18E42F00B48191 /* Dual.cpp */; };
+		2C4DD5192C18E42F00B48191 /* Dual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DD5162C18E42F00B48191 /* Dual.cpp */; };
+		2C4DD51A2C18E42F00B48191 /* Dual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DD5162C18E42F00B48191 /* Dual.cpp */; };
+		2C4DD51D2C18F55900B48191 /* DualTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DD51B2C18F55900B48191 /* DualTests.mm */; };
 		2C5855912B96BB200082FC03 /* DiffintegratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855902B96BB200082FC03 /* DiffintegratorApp.swift */; };
 		2C5855932B96BB200082FC03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5855922B96BB200082FC03 /* ContentView.swift */; };
 		2C5855952B96BB210082FC03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5855942B96BB210082FC03 /* Assets.xcassets */; };
@@ -72,6 +76,9 @@
 /* Begin PBXFileReference section */
 		2C07E1D72BF943FF00F3FA34 /* Calculator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Calculator.cpp; sourceTree = "<group>"; };
 		2C07E1D82BF943FF00F3FA34 /* Calculator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Calculator.hpp; sourceTree = "<group>"; };
+		2C4DD5162C18E42F00B48191 /* Dual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dual.cpp; sourceTree = "<group>"; };
+		2C4DD5172C18E42F00B48191 /* Dual.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Dual.hpp; sourceTree = "<group>"; };
+		2C4DD51B2C18F55900B48191 /* DualTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DualTests.mm; sourceTree = "<group>"; };
 		2C58558D2B96BB200082FC03 /* Diffintegrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diffintegrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5855902B96BB200082FC03 /* DiffintegratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffintegratorApp.swift; sourceTree = "<group>"; };
 		2C5855922B96BB200082FC03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -225,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				2C674D122BBDA5600068E5A9 /* ExpressionTests.mm */,
+				2C4DD51B2C18F55900B48191 /* DualTests.mm */,
 			);
 			path = DiffintegratorBackendTests;
 			sourceTree = "<group>";
@@ -242,6 +250,8 @@
 			children = (
 				2C674D2F2BBDCEB40068E5A9 /* TypeUtil.cpp */,
 				2C674D302BBDCEB40068E5A9 /* TypeUtil.hpp */,
+				2C4DD5162C18E42F00B48191 /* Dual.cpp */,
+				2C4DD5172C18E42F00B48191 /* Dual.hpp */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -398,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4DD5182C18E42F00B48191 /* Dual.cpp in Sources */,
 				2C5855932B96BB200082FC03 /* ContentView.swift in Sources */,
 				2C674D0A2BBD9F360068E5A9 /* Exceptions.cpp in Sources */,
 				2C5855A42B96CC530082FC03 /* Expression.cpp in Sources */,
@@ -432,6 +443,8 @@
 				2C716EB82BE87C4E004DCD24 /* Environment.cpp in Sources */,
 				2C674D252BBDA9970068E5A9 /* Exceptions.cpp in Sources */,
 				2C674D322BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
+				2C4DD51D2C18F55900B48191 /* DualTests.mm in Sources */,
+				2C4DD5192C18E42F00B48191 /* Dual.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +461,7 @@
 				2C716EB92BE87C4E004DCD24 /* Environment.cpp in Sources */,
 				2C674D262BBDA9970068E5A9 /* Exceptions.cpp in Sources */,
 				2C674D332BBDCEB40068E5A9 /* TypeUtil.cpp in Sources */,
+				2C4DD51A2C18E42F00B48191 /* Dual.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
