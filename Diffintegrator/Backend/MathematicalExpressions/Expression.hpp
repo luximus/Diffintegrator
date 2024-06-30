@@ -20,6 +20,7 @@
 #include <boost/fusion/include/vector.hpp>
 #include <boost/fusion/include/at_c.hpp>
 
+#include "Dual.hpp"
 #include "TypeUtil.hpp"
 
 namespace fusion = boost::fusion;
@@ -239,7 +240,7 @@ class Logarithm;
 class Exp;
 
 typedef boost::variant<
-    double,
+    Dual,
     NumberReference,
     Variable,
     boost::recursive_wrapper<PrefixOperator<negate>>,

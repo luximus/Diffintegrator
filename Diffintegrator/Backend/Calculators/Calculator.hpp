@@ -18,6 +18,7 @@
 #include <boost/variant/apply_visitor.hpp>
 #include <boost/variant/variant.hpp>
 
+#include "Dual.hpp"
 #include "EnvironmentNode.hpp"
 #include "Environment.hpp"
 #include "Exceptions.hpp"
@@ -60,7 +61,7 @@ public:
     };
     
     struct GlobalContext {
-        std::map<NumberReference, double> number_references;
+        std::map<NumberReference, Dual> number_references;
 //        std::map<const FunctionReference, std::function<double(std::vector<double>)>> function_references;
         
         std::shared_ptr<VisitMarker> visit_marker;
@@ -74,7 +75,7 @@ public:
     
     Calculator(Environment::SharedPtr env) : m_env(env) {}
     
-    virtual result_type operator()(const ExpressionNode& node, const std::shared_ptr<GlobalContext> context) const = 0;
+    // MARK: Public getters
     
     const Environment::SharedPtr environment() const { return m_env; }
     

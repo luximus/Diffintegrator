@@ -14,6 +14,7 @@
 #include <boost/variant/static_visitor.hpp>
 #include <boost/variant/apply_visitor.hpp>
 
+#include "Dual.hpp"
 #include "Expression.hpp"
 
 namespace Math {
@@ -37,7 +38,7 @@ public:
         boost::apply_visitor(*this, expr);
     }
     
-    void operator()(const double& value) {}
+    void operator()(const Dual& value) {}
     
     void operator()(const NumberReference& expr);
 //    void operator()(const Math::FunctionReference& expr) {};

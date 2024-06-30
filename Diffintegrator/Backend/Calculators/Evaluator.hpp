@@ -17,17 +17,18 @@
 #include <boost/variant/static_visitor.hpp>
 
 #include "Calculator.hpp"
+#include "Dual.hpp"
 #include "Environment.hpp"
 #include "EnvironmentNode.hpp"
 
 namespace Math {
 
-class Evaluator : public Calculator<double> {
+class Evaluator : public Calculator<Dual> {
 public:
     
-    Evaluator(Environment::SharedPtr env) : Calculator<double>(env) {};
+    Evaluator(Environment::SharedPtr env) : Calculator<Dual>(env) {};
     
-    virtual double operator()(const ExpressionNode& node, const std::shared_ptr<GlobalContext> context) const override;
+    virtual Dual operator()(const ExpressionNode& node, const std::shared_ptr<GlobalContext> context) const override;
 
 };
 
