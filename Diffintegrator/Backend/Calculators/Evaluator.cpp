@@ -20,6 +20,7 @@
 #include "Dual.hpp"
 #include "Evaluator.hpp"
 #include "Expression.hpp"
+#include "Exceptions.hpp"
 
 class ExpressionEvaluator : public boost::static_visitor<Math::Dual> {
 public:
@@ -38,10 +39,6 @@ public:
     Math::Dual operator()(const Math::NumberReference& expr) {
         return m_global_context->number_references.at(expr);
     }
-    
-//    Math::Dual operator()(const Math::FunctionReference& expr) {
-//        throw std::logic_error("Function references not yet supported");
-//    }
     
     Math::Dual operator()(const Math::Variable& expr) {
         return m_local_variables.at(expr);
@@ -177,13 +174,6 @@ Math::Dual Math::Evaluator::operator()(const ExpressionNode& node, const std::sh
             context->number_references.insert(std::make_pair(ref, result));
         }
     }
-    
-//    for (const FunctionReference& ref : node.function_ref_dependencies()) {
-//        if (!context.function_references.contains(ref)) {
-//            EnvironmentNodeCSharedPtr dep_node(m_env->get_assigned_node(ref));
-//            eval(dep_node, context);
-//        }
-//    }
     
     ExpressionEvaluator evaler(context);
     return boost::apply_visitor(evaler, node.expr());

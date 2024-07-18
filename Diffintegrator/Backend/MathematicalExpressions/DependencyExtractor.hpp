@@ -24,7 +24,6 @@ public:
     
     struct Result {
         std::set<NumberReference> number_refs;
-//        std::set<FunctionReference> function_refs;
         std::set<Variable> variables;
     };
     
@@ -41,7 +40,6 @@ public:
     void operator()(const Dual& value) {}
     
     void operator()(const NumberReference& expr);
-//    void operator()(const Math::FunctionReference& expr) {};
     
     void operator()(const Variable& expr);
     

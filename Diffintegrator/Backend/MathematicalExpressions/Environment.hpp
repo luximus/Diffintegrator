@@ -71,24 +71,15 @@ public:
         return m_number_refs.at(ref);
     }
     
-//    EnvironmentNodeCSharedPtr get_assigned_node(FunctionReference ref) const {
-//        return m_function_refs.at(ref);
-//    }
-    
     void assign(NumberReference ref, EnvironmentNodeSharedPtr node) {
         m_number_refs.insert(std::make_pair(ref, node));
     }
-    
-//    void assign(FunctionReference ref, EnvironmentNodeSharedPtr node) {
-//        m_function_refs.insert(std::make_pair(ref, node));
-//    }
     
 private:
     
     NodeSet m_nodes;
     
     std::map<NumberReference, EnvironmentNodeCSharedPtr> m_number_refs;
-//    std::map<FunctionReference, EnvironmentNodeCSharedPtr> m_function_refs;
     
 
 };

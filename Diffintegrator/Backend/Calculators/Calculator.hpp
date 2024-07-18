@@ -31,6 +31,9 @@ class Calculator : public boost::static_visitor<result_type> {
     
 public:
     
+    // MARK: Marking visits
+    
+    // May make this private
     class VisitMarker {
         std::set<EnvironmentNodeCSharedPtr> m_not_visited;
         std::set<EnvironmentNodeCSharedPtr> m_visited;
@@ -60,6 +63,8 @@ public:
         bool all_done() { return m_not_visited.empty() && m_visited.empty(); }
     };
     
+    // MARK: Contexts
+    
     struct GlobalContext {
         std::map<NumberReference, Dual> number_references;
 //        std::map<const FunctionReference, std::function<double(std::vector<double>)>> function_references;
@@ -71,6 +76,8 @@ public:
     
     typedef boost::variant<std::shared_ptr<GlobalContext>> var_GlobalContext;
     
+    // MARK: Constructors
+    
     Calculator() = delete;
     
     Calculator(Environment::SharedPtr env) : m_env(env) {}
@@ -78,6 +85,10 @@ public:
     // MARK: Public getters
     
     const Environment::SharedPtr environment() const { return m_env; }
+    
+    // MARK: Evaluation
+    
+    virtual result_type operator()(const ExpressionNode& node, const std::shared_ptr<GlobalContext> context) const = 0;
     
     std::map<EnvironmentNodeCSharedPtr, result_type> eval_all_in_environment() const {
         std::map<Math::EnvironmentNodeCSharedPtr, result_type> result;
@@ -94,7 +105,11 @@ public:
     
 protected:
     
+    // MARK: Member variables
+    
     Environment::SharedPtr m_env;
+    
+    // MARK: Specific evaluation implementation
     
     result_type eval(EnvironmentNodeCSharedPtr node, const std::shared_ptr<GlobalContext> context) const {
         if (context->visit_marker->visited(node)) {

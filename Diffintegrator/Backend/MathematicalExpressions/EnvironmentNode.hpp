@@ -26,7 +26,6 @@ class ExpressionNode {
     Expression m_expr;
     
     std::set<NumberReference> m_number_ref_dependencies;
-//    std::set<FunctionReference> m_function_ref_dependencies;
     std::set<Variable> m_local_variable_dependencies;
     
     void calc_dependencies();
@@ -40,10 +39,12 @@ public:
     
     const Expression& expr() const { return m_expr; }
     const std::set<NumberReference>& number_ref_dependencies() const { return m_number_ref_dependencies; }
-//    const std::set<FunctionReference>& function_ref_dependencies() const { return m_function_ref_dependencies; }
 
 };
 
+/**
+ A node in a mathematical environment. Nodes contain mathematical expressions with some sort of semantic meaning
+ */
 typedef boost::variant<
     ExpressionNode
 > EnvironmentNode;

@@ -33,26 +33,10 @@ namespace Math {
 struct NumberReference {
     std::string_view name;
     
-//    NumberReference(std::string name) : name(name) {};
+    NumberReference(std::string name) : name(name) {};
     NumberReference(std::string_view name) : name(name) {};
     
     friend auto operator<=>(const NumberReference&, const NumberReference&) = default;
-};
-
-/**
- A reference to a function value.
- */
-struct FunctionReference {
-    std::string_view name;
-    int number_of_arguments;
-    
-    FunctionReference(std::string name, int number_of_arguments)
-    : name(name), number_of_arguments(number_of_arguments) {}
-    
-    FunctionReference(std::string_view name, int number_of_arguments)
-    : name(name), number_of_arguments(number_of_arguments) {}
-    
-    friend auto operator<=>(const FunctionReference&, const FunctionReference&) = default;
 };
 
 /**
