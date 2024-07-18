@@ -23,6 +23,13 @@ char const* Math::DomainError::what() const noexcept(true) {
     return exception::what();
 }
 
+Math::TypeError::TypeError(const char *const message)
+: std::runtime_error(message) {};
+
+char const* Math::TypeError::what() const noexcept(true) {
+    return exception::what();
+}
+
 Math::ReferenceError::ReferenceError(const char *const message)
 : std::runtime_error(message) {};
 

@@ -35,6 +35,16 @@ public:
 };
 
 /**
+ The value makes no sense because it is of the incorrect type.
+ */
+class TypeError : public std::runtime_error {
+public:
+    TypeError(char const* const message);
+    
+    virtual char const* what() const noexcept(true);
+};
+
+/**
  The reference to another number or function could not be resolved.
  */
 class ReferenceError : public std::runtime_error {
